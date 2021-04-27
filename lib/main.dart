@@ -1,3 +1,4 @@
+import 'package:deli_meal/src/navigation/tab_page.dart';
 import 'package:deli_meal/src/pages/category_meal_page.dart';
 import 'package:deli_meal/src/pages/catetegories_page.dart';
 import 'package:deli_meal/src/pages/meal_details_page.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
       ),
-      home: CategoryPage(),
+      home: TabPage(),
       routes: {
         CategoryMealPage.routName: (BuildContext context) => CategoryMealPage(),
         MealDetails.routName: (BuildContext context) => MealDetails(),
