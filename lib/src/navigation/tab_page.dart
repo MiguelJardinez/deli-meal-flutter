@@ -1,3 +1,4 @@
+import 'package:deli_meal/src/navigation/main_drawer.dart';
 import 'package:deli_meal/src/pages/favorite_page.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,9 @@ class _TabPageState extends State<TabPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_pages[_selectPageIndex]['title']),
+      ),
+      drawer: Drawer(
+        child: DrawerMain(),
       ),
       body: _pages[_selectPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
