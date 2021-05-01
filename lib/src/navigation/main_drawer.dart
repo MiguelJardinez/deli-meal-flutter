@@ -1,7 +1,9 @@
+import 'package:deli_meal/src/pages/filter_page.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMain extends StatelessWidget {
-  Widget buildListTile(String title, IconData icon) {
+  Widget buildListTile(
+      BuildContext context, String title, IconData icon, String routName) {
     return ListTile(
       leading: Icon(
         icon,
@@ -14,6 +16,9 @@ class DrawerMain extends StatelessWidget {
             fontSize: 24,
             fontWeight: FontWeight.bold),
       ),
+      onTap: () {
+        Navigator.of(context).pushReplacementNamed('$routName');
+      },
     );
   }
 
@@ -40,8 +45,18 @@ class DrawerMain extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            buildListTile('Meal', Icons.restaurant),
-            buildListTile('Filters', Icons.settings),
+            buildListTile(
+              context,
+              'Meal',
+              Icons.restaurant,
+              '/',
+            ),
+            buildListTile(
+              context,
+              'Filters',
+              Icons.settings,
+              FilterPage.routeName,
+            ),
           ],
         ),
       ),

@@ -47,7 +47,6 @@ class MealDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mealID = ModalRoute.of(context).settings.arguments as String;
-    print(mealID);
     final meal = dummyMeal.firstWhere((meal) => meal.id == mealID);
     return Scaffold(
       appBar: AppBar(
@@ -78,6 +77,12 @@ class MealDetails extends StatelessWidget {
             )),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop(mealID);
+        },
+        child: Icon(Icons.delete),
       ),
     );
   }
